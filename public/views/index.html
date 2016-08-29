@@ -19,8 +19,8 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="//code.angularjs.org/1.5.8/angular-route.min.js"></script>
         <script src="/assets/js/index.js"></script>
-        <script src="/assets/js/routes.js"></script>
         <script src="/assets/js/controllers.js"></script>
+        <script src="/assets/js/directives.js"></script>
     </head>
     <body ng-controller="mainCtrl">
 
@@ -40,14 +40,16 @@
 
         <div class="container" ng-controller="todosCtrl">
 
-            {{ here }}
+            {{ location }}
             <div>
-                <ul ng-repeat="todo in myTodos">
+                <ul class="noBullet" ng-repeat="todo in myTodos">
                     <li><input type="checkbox" ng-checked="todo.isDone === true" ng-click="toggleStrikethrough(todo)" />
                         <span ng-class="{strikethrough: todo.isDone === true}">{{ todo.todo }}</span>
                     </li>
                 <ul>
             </div>
+
+            <add-todo></add-todo>
 
 		</div>
 
